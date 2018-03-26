@@ -51,6 +51,9 @@
     <Compile Include="fileManager.Designer.cs">
       <DependentUpon>fileManager.cs</DependentUpon>
     </Compile>
+    <Compile Include="IView.cs" />
+    <Compile Include="MiniTCPanelModel.cs" />
+    <Compile Include="Presenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MiniTCPanelView.cs">

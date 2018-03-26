@@ -35,30 +35,32 @@
             // miniTCPanel2
             // 
             this.miniTCPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
+            this.miniTCPanel2.CurrentPath = "";
             this.miniTCPanel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.miniTCPanel2.Font = new System.Drawing.Font("Coolvetica Rg", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.miniTCPanel2.Location = new System.Drawing.Point(363, 0);
-            this.miniTCPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.miniTCPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.miniTCPanel2.Location = new System.Drawing.Point(360, 0);
+            this.miniTCPanel2.Margin = new System.Windows.Forms.Padding(2);
             this.miniTCPanel2.Name = "miniTCPanel2";
-            this.miniTCPanel2.Size = new System.Drawing.Size(364, 653);
+            this.miniTCPanel2.Size = new System.Drawing.Size(359, 764);
             this.miniTCPanel2.TabIndex = 1;
             // 
             // miniTCPanel1
             // 
             this.miniTCPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
+            this.miniTCPanel1.CurrentPath = "";
             this.miniTCPanel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.miniTCPanel1.Font = new System.Drawing.Font("Coolvetica Rg", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.miniTCPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.miniTCPanel1.Location = new System.Drawing.Point(0, 0);
-            this.miniTCPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.miniTCPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.miniTCPanel1.Name = "miniTCPanel1";
-            this.miniTCPanel1.Size = new System.Drawing.Size(364, 653);
+            this.miniTCPanel1.Size = new System.Drawing.Size(360, 764);
             this.miniTCPanel1.TabIndex = 0;
             // 
             // fileManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(727, 653);
+            this.ClientSize = new System.Drawing.Size(719, 764);
             this.Controls.Add(this.miniTCPanel2);
             this.Controls.Add(this.miniTCPanel1);
             this.Name = "fileManager";

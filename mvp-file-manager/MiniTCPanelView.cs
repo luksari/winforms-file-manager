@@ -28,7 +28,6 @@ namespace mvp_file_manager
             {
                 textBoxPath.Text = value;
             }
-
         }
         public string[] Files
         {
@@ -54,14 +53,16 @@ namespace mvp_file_manager
         }
 
         #endregion
-        #region private fields
-        readonly DriveInfo[] readyDrives = DriveInfo.GetDrives().Where(drive => drive.IsReady).ToArray();
-        #endregion
-        #region private Methods
+        #region Private Methods
+
         private void LoadDrives(object sender, EventArgs e)
         {
+            DriveInfo[] readyDrives = DriveInfo.GetDrives().Where(drive => drive.IsReady).ToArray();
             comboBoxDrives.Items.Clear();
-            comboBoxDrives.DataSource = readyDrives;   
+            foreach(var drive in readyDrives)
+            {
+                comboBoxDrives.Items.Add(drive);
+            }
         }
 
         private void ChangeDrive(object sender, EventArgs e)
@@ -78,6 +79,7 @@ namespace mvp_file_manager
                 listBoxFiles.Items.Clear();
             }
         }
+
         private void ChangePath(string path)
         {
             CurrentPath = path;
@@ -89,7 +91,6 @@ namespace mvp_file_manager
             Directories = Directory.GetDirectories(CurrentPath);
             Files = Directory.GetFiles(CurrentPath);
         }
-
         private new void DoubleClick(object sender, EventArgs e)
         {
             if (listBoxFiles.SelectedItem != null)
@@ -100,10 +101,10 @@ namespace mvp_file_manager
                     ChangePath(listBoxFiles.SelectedItem.ToString().Remove(0, 5));
                 else
                     System.Diagnostics.Process.Start(listBoxFiles.SelectedItem.ToString());
-
             }
         }
 
         #endregion
+
     }
 }
