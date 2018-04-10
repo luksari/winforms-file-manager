@@ -61,7 +61,7 @@ namespace mvp_file_manager
         private void LoadDrives(object sender, EventArgs e)
         {
             comboBoxDrives.Items.Clear();
-            comboBoxDrives.DataSource = readyDrives;   
+            comboBoxDrives.Items.AddRange(readyDrives);  
         }
 
         private void ChangeDrive(object sender, EventArgs e)

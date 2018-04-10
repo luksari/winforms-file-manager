@@ -8,5 +8,19 @@ namespace mvp_file_manager
         {
             InitializeComponent();
         }
+
+        private void miniTCPanel1_Load(object sender, System.EventArgs e)
+        {
+
+        }
+
+        private void miniTCPanelView2_Load(object sender, System.EventArgs e)
+        {
+                    }
+
+        private void miniTCPanelView1_Load(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }
