@@ -16,7 +16,10 @@ namespace mvp_file_manager
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new fileManager());
+            Model model = new Model();
+            View view = new View();
+            Presenter p = new Presenter(model, view);
+            Application.Run(view);
         }
     }
 }

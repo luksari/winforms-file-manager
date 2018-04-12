@@ -1,6 +1,6 @@
 ﻿namespace mvp_file_manager
 {
-    partial class fileManager
+    partial class View
     {
         /// <summary>
         /// Required designer variable.

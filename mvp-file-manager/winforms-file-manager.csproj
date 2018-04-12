@@ -45,14 +45,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="fileManager.cs">
+    <Compile Include="View.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fileManager.Designer.cs">
-      <DependentUpon>fileManager.cs</DependentUpon>
+    <Compile Include="View.Designer.cs">
+      <DependentUpon>View.cs</DependentUpon>
     </Compile>
     <Compile Include="IView.cs" />
-    <Compile Include="MiniTCPanelModel.cs" />
+    <Compile Include="Model.cs" />
     <Compile Include="Presenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -62,8 +62,8 @@
     <Compile Include="MiniTCPanelView.Designer.cs">
       <DependentUpon>MiniTCPanelView.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="fileManager.resx">
-      <DependentUpon>fileManager.cs</DependentUpon>
+    <EmbeddedResource Include="View.resx">
+      <DependentUpon>View.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MiniTCPanelView.resx">
       <DependentUpon>MiniTCPanelView.cs</DependentUpon>
