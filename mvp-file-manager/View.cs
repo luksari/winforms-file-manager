@@ -62,7 +62,6 @@ namespace mvp_file_manager
                     miniTCPanel2.ClearSelected();
                     Panel1Active = true;
                     Panel2Active = false;
-                    //MessageBox.Show(SelectedItem + " source: " + SourcePath + " target: " + TargetPath);
 
                 }
                 else if (miniTCPanel.Name == "miniTCPanel2")
@@ -70,7 +69,6 @@ namespace mvp_file_manager
                     miniTCPanel1.ClearSelected();
                     Panel2Active = true;
                     Panel1Active = false;
-                    //MessageBox.Show(SelectedItem + " source: " + SourcePath + " target: " + TargetPath);
 
                 }
             }
@@ -100,7 +98,7 @@ namespace mvp_file_manager
             {
                 if (button.Text == "Remove")
                 {
-                    if (ViewButtonClicked(button.Text))  // need better solution, more objective with these panels 
+                    if (ViewButtonClicked(button.Text))  
                     {
                         if (Panel1Active)
                         {
@@ -112,7 +110,7 @@ namespace mvp_file_manager
                         }
                     }
                 }
-                else if (TargetPath != "")
+                else if (TargetPath != string.Empty)
                 {
                     if (ViewButtonClicked(button.Text))
                     {

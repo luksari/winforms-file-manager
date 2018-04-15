@@ -65,7 +65,13 @@ namespace mvp_file_manager
                     int index = value.IndexOf("<");
                     textBoxPath.Text = value.Remove(index, 5);
                 }
+                else if (value != null && value.Contains(".."))
+                {
+                    int index = value.IndexOf(".");
+                    textBoxPath.Text = value.Remove(index, 2);
+                }
                 else textBoxPath.Text = value;
+
             }
 
         }
@@ -76,14 +82,15 @@ namespace mvp_file_manager
             {
                 if (listBoxFiles.SelectedItem != null)
                 {
-                    if (listBoxFiles.SelectedItem.ToString().StartsWith("<DIR>"))    
-                                                                            
+                    if (listBoxFiles.SelectedItem.ToString().StartsWith("<DIR>") || listBoxFiles.SelectedItem.ToString().StartsWith("<...>"))
+
                     {
                         if (!listBoxFiles.SelectedItem.ToString().Contains("\\")) return "\\" + listBoxFiles.SelectedItem.ToString().Remove(0, 3);
 
                         else return listBoxFiles.SelectedItem.ToString().Remove(0, 5);
                     }
                     else if (!listBoxFiles.SelectedItem.ToString().Contains("\\")) return "\\" + listBoxFiles.SelectedItem.ToString();
+                   
                     else return listBoxFiles.SelectedItem.ToString();
                 }
                 else return null;
@@ -156,7 +163,8 @@ namespace mvp_file_manager
             ListBox listBox = sender as ListBox;
             if (listBox.SelectedItem != null)
             {
-                CurrentPath = CurrentPath + listBox.SelectedItem.ToString();
+                if(listBox.SelectedItem.ToString().StartsWith("<...>")) CurrentPath = listBox.SelectedItem.ToString().Remove(0,5);
+                else CurrentPath = CurrentPath + listBox.SelectedItem.ToString();
             }
             SelectedItem(sender, e); 
         }

@@ -28,15 +28,27 @@ namespace mvp_file_manager
                     string[] dirs = Directory.GetDirectories(path);
                     string[] files = Directory.GetFiles(path);
                     List<string> allItems = new List<string>();
-
-                    foreach (String d in dirs)
+                    try
+                    {
+                        allItems.Add("<...>" + Directory.GetParent(path).FullName);
+                    }
+                    catch (ArgumentNullException)
+                    {
+                        System.Console.WriteLine("Path is a null reference.");
+                    }
+                    catch (NullReferenceException)
+                    {
+                        System.Console.WriteLine("Path is a null reference.");
+                    }
+                    foreach (string d in dirs)
                     {
                         allItems.Add("<DIR>" + d.Remove(0, Path.GetDirectoryName(d).Length));
                     }
-                    foreach (String f in files)
+                    foreach (string f in files)
                     {
                         allItems.Add(f.Remove(0, Path.GetDirectoryName(f).Length));
                     }
+                    
                     return allItems;
                 }
                 else
@@ -60,16 +72,14 @@ namespace mvp_file_manager
 
         internal bool CopyDir(string sourceDir, string targetDir)
         {
-            if (Directory.Exists(sourceDir)) //copy folder 
+            if (Directory.Exists(sourceDir)) 
             {
-                Console.WriteLine(sourceDir + " target: " + targetDir);
                 DirectoryCopy(sourceDir, targetDir, true);
             }
             else
             {
-                //copy only files
-                Console.WriteLine(sourceDir + " target: " + targetDir);
-                File.Copy(sourceDir, targetDir); //the same name for the destination file 
+
+                File.Copy(sourceDir, targetDir); 
             }
             return true;
 
@@ -77,11 +87,10 @@ namespace mvp_file_manager
         internal bool MoveDir(string sourceDir, string targetDir)
         {
 
-            if (Directory.Exists(sourceDir)) //copy folder 
+            if (Directory.Exists(sourceDir)) 
             {
-                Console.WriteLine(sourceDir + " target: " + targetDir);
 
-                if (Directory.GetDirectoryRoot(sou­rceDir) == Directory.GetDirectoryRoot(targetDir)) // if its the same volumin, biuld in method
+                if (Directory.GetDirectoryRoot(sou­rceDir) == Directory.GetDirectoryRoot(targetDir)) 
                 {
                     Directory.Move(sourceDir, targetDir);
                 }
@@ -96,9 +105,9 @@ namespace mvp_file_manager
             return true;
 
         }
-        internal bool RemoveDir(string dir) // check if user is sure to remove file, update list     
+        internal bool RemoveDir(string dir) 
         {
-            if (Directory.Exists(dir)) //delete folder recursively 
+            if (Directory.Exists(dir)) 
             {
                 Directory.Delete(dir, true);
             }
@@ -129,7 +138,7 @@ namespace mvp_file_manager
         #region Private Methods
         private static void DirectoryCopy(string currentDirectory, string targetDirectory, bool copySubDirs)
         {
-            // Get the subdirectories for the specified directory.
+
             DirectoryInfo dir = new DirectoryInfo(currentDirectory);
 
             if (!dir.Exists)
@@ -140,21 +149,21 @@ namespace mvp_file_manager
             }
 
             DirectoryInfo[] dirs = dir.GetDirectories();
-            // If the destination directory doesn't exist, create it.
+
             if (!Directory.Exists(targetDirectory))
             {
                 Directory.CreateDirectory(targetDirectory);
             }
 
-            // Get the files in the directory and copy them to the new location.
+
             FileInfo[] files = dir.GetFiles();
             foreach (FileInfo file in files)
             {
-                string temppath = Path.Combine(targetDirectory, file.Name); //'System.IO.IOException -> when the filename exist!!
+                string temppath = Path.Combine(targetDirectory, file.Name); 
                 file.CopyTo(temppath, false);
             }
 
-            // If copying subdirectories, copy them and their contents to new location.
+
             if (copySubDirs)
             {
                 foreach (DirectoryInfo subdir in dirs)
