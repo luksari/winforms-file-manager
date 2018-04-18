@@ -27,16 +27,16 @@ namespace mvp_file_manager
                 view.ViewEventLoadReturnPath += View_ViewEventLoadReturnPath;
                 view.ViewButtonClicked += View_ButtonClicked;
 
-            }
-        private bool View_ButtonClicked(string button)
+        }
+        private bool View_ButtonClicked(string action)
         {
             try
             {
-                switch (button)
+                switch (action)
                 {
                     case "Copy":
                         return model.CopyDir(view.SourcePath + view.SelectedItem, view.TargetPath + view.SelectedItem);
-                    case "Remove":
+                    case "Delete":
                         return model.RemoveDir(view.SourcePath + view.SelectedItem);
                     case "Move":
                         return model.MoveDir(view.SourcePath + view.SelectedItem, view.TargetPath + view.SelectedItem);
@@ -56,7 +56,6 @@ namespace mvp_file_manager
                 return model.LoadPath(path.ToString());
 
             }
-
             private List<DriveInfo> View_ViewEventLoadDrives(object arg1, EventArgs arg2)
             {
                 return model.LoadDrives();

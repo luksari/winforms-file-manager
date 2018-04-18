@@ -88,9 +88,10 @@
             // 
             // listBoxFiles
             // 
+            this.listBoxFiles.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.listBoxFiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.listBoxFiles.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listBoxFiles.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listBoxFiles.Font = new System.Drawing.Font("Arial", 10.25F);
             this.listBoxFiles.ForeColor = System.Drawing.SystemColors.MenuBar;
             this.listBoxFiles.FormattingEnabled = true;
@@ -100,12 +101,12 @@
             this.listBoxFiles.Name = "listBoxFiles";
             this.listBoxFiles.Size = new System.Drawing.Size(486, 610);
             this.listBoxFiles.TabIndex = 4;
+            this.listBoxFiles.SelectedIndexChanged += new System.EventHandler(this.SelectedItem);
             this.listBoxFiles.DoubleClick += new System.EventHandler(this.ExecutePath);
             // 
             // MiniTCPanelView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
             this.Controls.Add(this.listBoxFiles);
             this.Controls.Add(this.comboBoxDrives);

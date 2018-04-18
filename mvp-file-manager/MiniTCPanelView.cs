@@ -82,8 +82,7 @@ namespace mvp_file_manager
             {
                 if (listBoxFiles.SelectedItem != null)
                 {
-                    if (listBoxFiles.SelectedItem.ToString().StartsWith("<DIR>") || listBoxFiles.SelectedItem.ToString().StartsWith("<...>"))
-
+                    if (listBoxFiles.SelectedItem.ToString().StartsWith("<DIR>"))
                     {
                         if (!listBoxFiles.SelectedItem.ToString().Contains("\\")) return "\\" + listBoxFiles.SelectedItem.ToString().Remove(0, 3);
 
@@ -134,10 +133,10 @@ namespace mvp_file_manager
 
         public void SelectedItem(object sender, EventArgs e)
         {
-            ListBox listBox = sender as ListBox;
-            if (listBox != null)
+            ListBox listBoxFiles = sender as ListBox;
+            if (listBoxFiles != null)
             {
-                if (listBox.SelectedItem != null)
+                if (listBoxFiles.SelectedItem != null)
                 {
 
                     PanelSelectedItem(this, e, false);
@@ -167,7 +166,7 @@ namespace mvp_file_manager
                 else CurrentPath = CurrentPath + listBox.SelectedItem.ToString();
             }
             SelectedItem(sender, e); 
-        }
+        }               
 
         public event Func<object, EventArgs, string> PanelEventReturnPath;
         private void ReturnButtonClick(object sender, EventArgs e)

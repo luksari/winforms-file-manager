@@ -78,7 +78,6 @@ namespace mvp_file_manager
             }
             else
             {
-
                 File.Copy(sourceDir, targetDir); 
             }
             return true;

@@ -61,15 +61,13 @@ namespace mvp_file_manager
                 {
                     miniTCPanel2.ClearSelected();
                     Panel1Active = true;
-                    Panel2Active = false;
-
+                    Panel2Active = false;   
                 }
                 else if (miniTCPanel.Name == "miniTCPanel2")
                 {
                     miniTCPanel1.ClearSelected();
                     Panel2Active = true;
                     Panel1Active = false;
-
                 }
             }
 
@@ -96,7 +94,7 @@ namespace mvp_file_manager
 
             if (SelectedItem != null)
             {
-                if (button.Text == "Remove")
+                if (button.Text == "Delete")
                 {
                     if (ViewButtonClicked(button.Text))  
                     {
